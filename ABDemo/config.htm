@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Rockwell PLC Demo</title>
+		
+		<link rel="icon" type="image/png" href="images/ewon_logo.png" />
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/abdemo.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootbox.min.js"></script>
+		<script type="text/javascript" src="js/ewon.js"></script>
+	</head>
+	
+	<body>
+		<div id="container">
+		
+			<div id="aside">
+				<img id="logo" src="images/ewon_logo.png" width="275" height="80" alt="Logo eWON" />
+				<h1>Connect your HMI & PLC remotely </br>through eWON Cosy</h1>
+			</div>
+			
+			<nav id="menu">
+				<ul>
+					<li id="home"><a href="index.shtm">Home</a></li>
+					<li><a href="/usr/viewon/index.html">Access ViewOn</a></li>
+					<li><a href="http://192.168.140.3">Camera</a></li>
+					<!--<li><a href="http://192.168.140.4" target="_blank">Access PLC</a></li>-->
+					<li>
+					  <span id="Html_Menu" style="font-weight:bold;color:#495163;" onmouseover="this.style.cursor = 'pointer';">Html Examples</span>
+						<nav id="HtmlSubMenu" style="display:none">
+							<div style="position:absolute;margin-top:-19px;margin-left:40px;width:13px;height:13px;">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 10" preserveAspectRatio="none">
+								 <path d="M0 10 L5 3 L10 10 Z" fill="#495163" />
+							</svg>
+							</div>
+						   <ul>
+							  <li><a id="PLCWebServer_Link" href="/usr/HMIDemo2.shtm">HTML Example One</a></li>
+							  <li><a id="PLCReconfigure_Link" href="/usr/sample.shtm">HTML Example Two</a></li>
+							</ul>
+						</nav>
+					</li>
+					<li><a href="http://support.ewon.biz/livedemo/contact.html" target="_blank">Contact Me</a></li>
+				</ul>
+			</nav>
+			
+			<div id="wrapper">
+				<div id="graylayoutCam">
+					<div id="innermainCam">
+					<img id="intro-s" src="images/eWON_IOServer.png" width="600px" height="400px" style="margin-bottom:.2cm; margin-left:-1cm"/>
+					<img id="intro-s" src="images/eWON_TagSetup.png" width="600px" height="200px" style="margin-bottom:.2cm; margin-left:-1cm"/>
+					</div>
+				</div>
+
+				<div id="schema">
+					<img id="intro-schema" src="images/T2M demo Layout.jpg" alt="Schema" width="100px" height="100px"/>
+					<br>
+					<p class="text-body"><u>PLC Address</u></p>
+					<p>DF1 Address: 1</p>
+					<p>Gateway Address: 192.168.140.1</p><br>
+					
+					<p class="text-body"><u>Remote Maintenance</u></p>
+					<p>1. In RSLinx open the "Configure Drivers" window (see <a id="mylink" title="Image1" onclick="rslinxOne()" onmouseover="this.style.cursor = 'pointer';">Image1</a>)</p>
+					<p>2. Select or add the AB_ETH-1 (Ethernet Devices) driver and click the configure button.</p>
+					<p>3. In the Station Mapping table add te IP address of the eWON (192.168.140.1) (see <a id="rslinximg2" title="Image2" onclick="rslinxTwo()" onmouseover="this.style.cursor = 'pointer';">Image2</a>)</p>
+					<p>4. RSWho should now display the AB PLC (see <a id="rslinximg3" title="Image3" onclick="rslinxThree()" onmouseover="this.style.cursor = 'pointer';">Image3</a>)</p>
+					<img style="float:right; margin-top:50px; max-height:70px" src="hms.png" />
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>
