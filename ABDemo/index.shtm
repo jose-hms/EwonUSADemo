@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Rockwell PLC Demo</title>
+		<link rel="icon" type="image/png" href="images/ewon_logo.png" />
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/abdemo.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootbox.min.js"></script>
+		<script type="text/javascript" src="js/ewon.js"></script>
+	</head>
+	
+	
+	<body onload="SetLampValue(<%#TagSSI,Lamp_Status%>);">
+		<div id="container">
+			<div id="aside">
+				<img id="logo" src="images/ewon_logo.png" width="275" height="80" alt="Logo eWON" />
+				<h1>Connect your HMI & PLC remotely </br>through an eWON Flexy</h1>
+			</div>
+		
+			<nav id="menu">
+				<ul>
+					<li><a href="http://192.168.140.1/index.htm">eWON Home</a></li>
+					<li><a href="/usr/viewon/index.html">Access ViewOn</a></li>
+					<li><a href="http://192.168.140.3">Camera</a></li>
+					<!--<li><a href="http://192.168.140.4" target="_blank">Access PLC</a></li>-->
+					<li>
+					  <span id="Html_Menu" style="font-weight:bold;color:#495163;" onmouseover="this.style.cursor = 'pointer';">Html Examples</span>
+						<nav id="HtmlSubMenu" style="display:none">
+							<div style="position:absolute;margin-top:-19px;margin-left:40px;width:13px;height:13px;">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 10" preserveAspectRatio="none">
+								 <path d="M0 10 L5 3 L10 10 Z" fill="#495163" />
+							</svg>
+							</div>
+						   <ul>
+							  <li><a id="PLCWebServer_Link" href="/usr/HMIDemo2.shtm">HTML Example One</a></li>
+							  <li><a id="PLCReconfigure_Link" href="/usr/sample.shtm">HTML Example Two</a></li>
+							</ul>
+						</nav>
+					</li>
+					<li><a href="config.htm">Configuration Info.</a></li>
+				</ul>
+			</nav>
+			
+			<div id="wrapper">
+				<div id="graylayoutCam">
+					<div id="innermainCam">
+						<img id="cameraStream" src="http://192.168.140.3/mjpg/video.mjpg" width="100%" height="100%" />
+					</div>
+				</div>
+
+				<div id="schema">
+					<center><img id="intro-schema" src="images/flexylayouut.png" alt="Schema" style="max-width:90%"/></center>
+					<p class="text-body">You are currently connected to an eWON CD series WebPage.  This eWON allows you to remote access your PLC as
+					well as your HMI.  Click on the various links to view the Web HMI capabilities as well as a sample configuration. </p>
+					
+						<button id="buttonHMI" onclick="WriteTag();" class="button">
+						<div class="TextBodyBold">
+						Toggle Output <img src="images/poweron.png" alt="On" /></br>
+						</div>
+						</button>
+				
+					<a href="/usr/config.htm">
+					<button id="buttonHMI" class="button" style="margin-left:50px">
+						<div class="TextBodyBold">
+						Get Live! <img src="images/ArrowBlueRight.png" alt="Off" /></br>
+						</div>
+					</button>
+					</a>
+					<div style="clear:both;"></div>
+					<a id="buttonContactMe" href="http://support.ewon.biz/livedemo/contact.html" target="_blank">
+						<div class="TextBodyBold">
+							CONTACT ME <img src="images/ArrowWhite.png" alt="White Arrow" />
+						</div>
+
+					</a>
+					<img style="float:right; margin-top:15px; max-height:70px" src="images/hms.png" />
+				</div>	
+				
+			</div>
+		</div>
+	</body>
+</html>
