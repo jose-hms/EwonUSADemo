@@ -15,7 +15,7 @@
 	</head>
 	
 	
-	<body>
+	<body onload="SetLampValue(<%#TagSSI,Lamp_Status%>);">
 		<div id="container">
 			<div id="aside">
 				<img id="logo" src="images/ewon_logo.png" width="275" height="80" alt="Logo eWON" />
@@ -58,9 +58,7 @@
 					<p class="text-body">You are currently connected to an eWON CD series WebPage.  This eWON allows you to remote access your PLC as
 					well as your HMI.  Click on the various links to view the Web HMI capabilities as well as a sample configuration. </p>
 					
-					<form method="POST" action="/rcgi.bin/UpdateTagForm">
-						<input type="hidden" name="TagName" value="Lamp_Status">
-						<button id="buttonHMI" onclick="if(Lamp_Status@<>1) THEN Lamp_Status@=1 ELSE Lamp_Status@ = 0" class="button" type="submit">
+						<button id="buttonHMI" onclick="WriteTag();" class="button">
 						<div class="TextBodyBold">
 						Toggle Output <img src="images/poweron.png" alt="On" /></br>
 						</div>
@@ -78,6 +76,7 @@
 						<div class="TextBodyBold">
 							CONTACT ME <img src="images/ArrowWhite.png" alt="White Arrow" />
 						</div>
+
 					</a>
 					<img style="float:right; margin-top:15px; max-height:70px" src="images/hms.png" />
 				</div>	

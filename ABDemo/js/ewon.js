@@ -31,6 +31,26 @@ $("*").click(function (event) {
 	}
 });
 
+
+//Set the lamp_status value
+function SetLampValue(val) {
+	lampValue = val;
+	return lampValue ? 0 : 1;
+}
+
+//write the value to the ewon .
+function WriteTag() {
+	jQuery.ajax({
+		type : 'POST',
+		url : "/rcgi.bin/UpdateTagForm",
+		contentType : 'text/html',
+		dataType : 'text',
+		data : 'TagName=Lamp_Status&TagValue=' + SetLampValue(lampValue),
+	});
+	
+	SetLampValue(lampValue ? 0 : 1);
+}
+
 function rslinxOne() {
 	bootbox.alert("<center><h4 class=\"text-body\">Step 1: Configure Your Driver</h4><img src=\"http://192.168.140.1/usr/images/RSLinx1.png\"/></center><p>1. Select Communication</p><p>2. Select Configure drivers</p>");
 
